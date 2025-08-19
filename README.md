@@ -61,4 +61,4 @@ Contribute your own ideas, analyses, or features. Start a discussion, open a pul
 
 This repository is about discovery—finding out what makes songs memorable, successful, or surprising. Take a look, dive deep, and don’t hesitate to add your own perspective. The data is just the beginning; the real story is what you do with it.
 
-Ready to explore? Start here.
+
