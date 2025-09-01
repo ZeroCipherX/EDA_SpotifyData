@@ -1,64 +1,66 @@
 # Spotify EDA: Data-Driven Music Discovery
 
-Welcome to the Spotify EDA project.  
-Here, we go beyond the surface of streaming numbers and dive into what really makes a song connect with listeners.
 
 ---
 
-## What is This Project?
+# Spotify Dataset EDA
 
-This repository explores real Spotify track data to uncover patterns behind musical hits and misses. Through careful data cleaning, feature engineering, and insightful visualizations, we reveal the characteristics that set popular songs apart.
-
-You’ll find answers to questions like:
-- What do the most streamed songs have in common?
-- How do danceability, energy, and mood affect popularity?
-- Are there trends by genre, release year, or other audio features?
-- Can data help predict the next big hit?
+This project performs an **Exploratory Data Analysis (EDA)** on a Spotify dataset to uncover insights about streaming patterns, artist performance, and audio feature correlations.
 
 ---
 
-## What Was Done
+## Project Structure
 
-First, the data was cleaned—missing and invalid values were handled, columns were converted to useful formats, and new features were added (like mood score and chart presence).
-
-Then, the analysis began:  
-Streaming numbers, popularity, and musical features were explored to find trends and outliers. Visualizations helped make sense of these relationships, and key insights were summarized.
-
----
-
-## Main Insights
-
-- Most songs have modest stream counts, with a few standing out as massive hits.
-- There’s a clear “sound” to success—hit tracks often share similar values for danceability, energy, and mood.
-- Not all popular tracks are heavily streamed, and vice versa.
-- The cleaned dataset is now reliable for deeper analysis and ready for machine learning or predictive projects.
+* **spotify\_dataset.csv** – Raw dataset used for analysis.
+* **spotify\_eda.ipynb** – Jupyter Notebook with step-by-step EDA and visualizations.
+* **spotify\_eda.pdf / spotify\_eda.html** – Exported report of the EDA with insights and plots.
 
 ---
 
-## Why Does This Matter?
+## Setup & Requirements
 
-This project turns raw listening data into practical insights.  
-Artists and labels can understand what listeners respond to. Streaming platforms can improve recommendations and playlists. Data scientists and music fans can explore, predict, and learn more about the art and business of music.
+To run this project, install the following Python libraries:
 
----
-
-## How to Use This Repo
-
-- Open the main notebook to follow the data cleaning, feature engineering, and analysis steps.
-- Use the code and methods for your own Spotify or music-related datasets.
-- Build on the insights: try predictive modeling, cluster genres, or find new patterns.
+```bash
+pip install pandas numpy matplotlib seaborn
+```
 
 ---
 
-## Add More
+## Analysis Steps
 
-Music never stands still, and neither should this project.  
-Contribute your own ideas, analyses, or features. Start a discussion, open a pull request, or use the data for your own experiments.
+1. **Data Loading & Cleaning**
+
+   * Removed unnecessary ID and index columns.
+   * Converted numeric-like columns (e.g., Streams, Artist Followers) into numeric types.
+   * Handled missing values using mean, mode, and median imputation.
+   * Engineered features such as `Release Year`, `Total Chart Presence`, and `Duration (min)`.
+
+2. **Feature Engineering**
+
+   * Created a `Mood Score` using valence and acousticness.
+   * Adjusted zero values where invalid by replacing them with medians.
+
+3. **Exploratory Visualizations**
+
+   * Distribution of Streams (log-scaled).
+   * Popularity vs. Streams scatterplot.
+   * Correlation Heatmap of audio features.
+   * Top 10 Artists by Total Streams bar chart.
+   * Song Duration Distribution with mean highlighted.
+   * Top Genres by Average Streams.
+   * Yearly Trends in Average Streams.
+   * Outlier detection (Streams & Popularity).
 
 ---
 
-## Final Note
+## Key Insights
 
-This repository is about discovery—finding out what makes songs memorable, successful, or surprising. Take a look, dive deep, and don’t hesitate to add your own perspective. The data is just the beginning; the real story is what you do with it.
+* **Song Duration**: Most tracks are \~3–4 minutes, aligning with commercial standards.
+* **Top Artists**: Taylor Swift, BTS, and Justin Bieber dominate total streams.
+* **Distribution**: Streaming counts follow a long-tail effect – few mega-hits drive most of the volume.
+* **Popularity**: Most songs fall in the 60–90 popularity range, but niche or new tracks can still chart.
+* **Audio Features**: High-energy, danceable songs are more likely to achieve streaming success.
 
+---
 
